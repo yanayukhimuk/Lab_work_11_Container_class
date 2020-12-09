@@ -1,5 +1,8 @@
 #pragma once
 #include <cassert> 
+#include <iostream>
+
+using namespace std;
 
 template <class Type> 
 
@@ -115,4 +118,20 @@ public:
 	int getLength() { 
 		cout << "Длина массива" << endl; 
 		return array_size; }
+
+	void sortArray() {
+		cout << "Сортировка массива методом выбора" << endl;
+		int array_size = 0;
+		for (int startIndex = 0; startIndex < array_size - 1; startIndex++)
+		{
+			int smallestIndex = startIndex;
+			for (int currentIndex = startIndex + 1; currentIndex < array_size; currentIndex++)
+			{
+				if (array[currentIndex] < array[smallestIndex])
+					smallestIndex = currentIndex;
+			}
+			std::swap(array[startIndex], array[smallestIndex]);
+		}
+
+	}
 };
